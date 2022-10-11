@@ -10,10 +10,12 @@ Then, write a function named speaker that takes in a string and a callback funct
 
 export function greeting(message) {
     // Solution code here...
+    return message.toUpperCase();
 }
 
 export const speaker = (message, callback) => {
     // Solution code here...
+    return callback(message);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,10 +36,20 @@ Return the modified array.
 
 export const addValues = (arr, value) => {
     // Solution code here...
+
+    arr.push(value);
 };
 
 export const addNumbers = (num, arr, times, callback) => {
     // Solution code here...
+    let count = times;
+
+    while(count > 0) {
+        callback(arr, num);
+        count--;
+    }
+
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,10 +68,18 @@ Return the modified array.
 
 export const removeOne = (num, arr) => {
     // Solution code here...
+    if(num % 3 === 2) {
+        arr.pop();
+    }
 };
 
 export const removeElements = (arr, callback) => {
     // Solution code here...
+    for(let i = 0; i < arr.length; i++) {
+        callback(arr[i], arr);
+    }
+
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,6 +89,9 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 export const removeWithForEach = (arr, callback) => {
     // Solution code here...
+    arr.forEach((el) => callback(el, arr));
+
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,6 +107,14 @@ in removeOne directly into this anonymous function.
 
 export const removeWithAnon = (arr) => {
     // Solution code here...
+
+    arr.forEach((el) => {
+        if(el % 3 === 2) {
+            arr.pop();
+        }
+    });
+
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,6 +136,15 @@ This function should create another new array (the grocery list) and then use fo
 
 export const createList = (arr) => {
     // Solution code here...
+    const list = [];
+
+    arr.forEach((el) => {
+        if(el.available === true) {
+            list.push(el.name);
+        }
+    });
+
+    return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,4 +165,19 @@ Return the resulting output array.
 
 export const fizzBuzz = (arr) => {
     // Solution code here...
+    const outputArr = [];
+
+    arr.forEach((el) => {
+        if(el % 3 === 0 && el % 5 === 0) {
+            outputArr.push('Fizz Buzz');
+        } else if(el % 3 === 0) {
+            outputArr.push('Fizz');
+        } else if(el % 5 === 0) {
+            outputArr.push('Buzz');
+        } else {
+            outputArr.push(el);
+        }
+    });
+
+    return outputArr;
 };

@@ -26,7 +26,7 @@ Run your tests from the browser using live-server, or console via: npm test
 
 ------------------------------------------------------------------------------------------------ */
 
-only('It should return the message with all uppercase characters', (assert) => {
+test('It should return the message with all uppercase characters', (assert) => {
     const result = speaker('hello Bootcamp 2 students!', greeting);
     assert.equal(result, 'HELLO BOOTCAMP 2 STUDENTS!');
 });
@@ -71,7 +71,7 @@ test('It should only add the available items to the list', (assert) => {
     assert.deepEqual(available, ['apples', 'pears', 'bananas']);
 });
 
-test('It should print out messages or numbers according to fizz buzz rules', (assert) => {
+only('It should print out messages or numbers according to fizz buzz rules', (assert) => {
     const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     const outputs = fizzBuzz(inputs);
     assert.deepEqual(outputs, [
