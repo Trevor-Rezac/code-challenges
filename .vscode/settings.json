@@ -2,5 +2,8 @@
     "cSpell.words": [
         "snorlax"
     ],
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.formatOnSave": true,
+    "javascript.preferences.quoteStyle": "single"
 }

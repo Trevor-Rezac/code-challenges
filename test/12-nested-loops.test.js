@@ -9,7 +9,7 @@ import {
     excel
 } from '../src/12-nested-loops/12-nested-loops.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('12 Nested Loops');
 

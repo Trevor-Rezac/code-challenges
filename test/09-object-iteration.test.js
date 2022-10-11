@@ -9,7 +9,7 @@ import {
     totalCharactersReduced,
 } from '../src/09-object-iteration/09-object-iteration.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('09 Object Iteration');
 

@@ -6,7 +6,7 @@ import {
     findShortestName
 } from '../src/10-chaining/10-chaining.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('10 Array Method Chaining');
 

@@ -11,7 +11,7 @@ import {
     extractVowels
 } from '../src/05-split-join-slice-splice/05-split-join-slice-splice.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('05 split join slice splice');
 

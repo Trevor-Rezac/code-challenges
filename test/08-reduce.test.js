@@ -9,7 +9,7 @@ import {
     extractChildren
 } from '../src/08-reduce/08-reduce.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('08 Array reduce');
 

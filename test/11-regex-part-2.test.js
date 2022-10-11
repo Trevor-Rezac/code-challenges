@@ -5,7 +5,7 @@ import {
     findTagNames
 } from '../src/11-regex-part-2/11-regex-part-2.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('11 Regex Part 2');
 
