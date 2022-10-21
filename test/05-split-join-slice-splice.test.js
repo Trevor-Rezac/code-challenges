@@ -11,7 +11,7 @@ import {
     extractVowels
 } from '../src/05-split-join-slice-splice/05-split-join-slice-splice.js';
 
-const { test } = QUnit;
+const { test, only } = QUnit;
 
 QUnit.module('05 split join slice splice');
 
@@ -33,6 +33,7 @@ test('It should return a list of shortening words', assert => {
     );
     assert.deepEqual(howMuchPencil(''), ['']);
     assert.deepEqual(howMuchPencil('abc'), ['abc', 'bc', 'c', '']);
+    
 });
 
 test('It should return an array of individual letters', assert => {
@@ -127,7 +128,7 @@ test('It should return the string without vowels', assert => {
     assert.equal(removeVowels('why'), 'why');
 });
 
-test('It should return the string without vowels', assert => {
+only('It should return the string without vowels', assert => {
     assert.deepEqual(extractVowels('gregor'), ['grgr', 'eo']);
     assert.deepEqual(extractVowels('The quick brown fox'), ['Th qck brwn fx', 'eioou']);
 });

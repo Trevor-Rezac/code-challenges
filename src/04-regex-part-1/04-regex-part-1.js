@@ -14,7 +14,8 @@ For example:
 
 export const isNum = (input) => {
   // Solution code here...
-
+    let regexPattern = /^[0-9]+$/g;
+    return regexPattern.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------

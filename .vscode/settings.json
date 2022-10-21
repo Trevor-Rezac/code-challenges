@@ -5,5 +5,8 @@
     "liveServer.settings.port": 5501,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.formatOnSave": true,
-    "javascript.preferences.quoteStyle": "single"
+    "javascript.preferences.quoteStyle": "single",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "javascript.format.semicolons": "insert",
+    "typescript.format.semicolons": "insert"
 }
