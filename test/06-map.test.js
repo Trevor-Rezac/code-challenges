@@ -8,7 +8,7 @@ import {
     extractStats
 } from '../src/06-map/06-map.js';
 
-const { test, only } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('06 Array map');
 
@@ -150,7 +150,7 @@ const snorlaxStats = {
     weight: 4600,
 };
 
-only('It should return an array containing objects with name and total values', assert => {
+test('It should return an array containing objects with name and total values', assert => {
     assert.deepEqual(
         extractStats(snorlaxStats.stats),
         [

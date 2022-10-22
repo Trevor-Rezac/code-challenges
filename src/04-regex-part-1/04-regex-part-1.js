@@ -14,7 +14,7 @@ For example:
 
 export const isNum = (input) => {
   // Solution code here...
-    let regexPattern = /^[0-9]+$/g;
+    let regexPattern = /\d/g;
     return regexPattern.test(input);
 };
 
@@ -27,8 +27,27 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 export const isCapitalized = (str) => {
-  // Solution code here...
+    //NOT PASSING
+    //NEED TO FIGURE OUT HOW TO REMOVE SPECIAL
+    //CHARACTERS FROM THE END OF A WORD
+    //example: May).
+    const regexPattern = /^[A-Z]/g;
+    const regexPunctuation = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
+    let solution = [];
+    let wordArr = str.split(' ');
+    
+    wordArr.forEach((word) => {
+
+        let wordOnly = word.replace(regexPunctuation, '');
+
+        if(regexPattern.test(wordOnly)) {
+  
+            solution.push(wordOnly);
+        }
+    });
+
+    return solution;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,7 +57,16 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 export const citiesAtoJ = (arr) => {
-  // Solution code here...
+    const regexPattern = /^[A-J]/;
+    let solution = [];
+
+    arr.forEach((city) => {
+        if(regexPattern.test(city)) {
+            solution.push(city);
+        }
+    });
+
+    return solution;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,8 +82,15 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 export const matchMonth = (input) => {
-  // Solution code here...
+  // NOT SOLVED!!! 
+  //NEED TO FIGURE OUT THE REGEX PATTERN THAT
+  //RECOGNIZES ALL MONTH VARIATIONS BUT DOES NOT
+  //USE THE 'OR' BAR(PIPE)??????
+    const regexPattern = /[A-Za-z]+.*[a-zA-Z]+/i;
 
+    if(regexPattern.test(input)) {
+        return true;
+    } else false;
 };
 
 /* ------------------------------------------------------------------------------------------------
