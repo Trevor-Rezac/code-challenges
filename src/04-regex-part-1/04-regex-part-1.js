@@ -27,10 +27,6 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 export const isCapitalized = (str) => {
-    //NOT PASSING
-    //NEED TO FIGURE OUT HOW TO REMOVE SPECIAL
-    //CHARACTERS FROM THE END OF A WORD
-    //example: May).
     const regexPattern = /^[A-Z]/g;
     const regexPunctuation = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
