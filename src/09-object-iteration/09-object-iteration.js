@@ -9,7 +9,7 @@ For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
 
 export const getCourseKeys = obj => {
-    // Solution code here...
+    return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Write a function named getHouses that returns a new array containing the names o
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseNames = houses => {
-    // Solution code here...
+    return Object.keys(houses);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,7 +30,18 @@ Write a function named getHouseWords that uses Object.values to return a new arr
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseWords = houses => {
-    // Solution code here...
+    return Object.entries(houses).map(([key, value]) => value.words);
+    
+    // CODE BELOW THIS LINE PASSES THE TEST
+    // BUT DOES NOT USE OBJECT.VALUES()
+
+    // let solution = [];
+
+    // for(let house in houses) {
+    //     solution.push(houses[house].words);
+    // }
+
+    // return solution;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,7 +51,15 @@ Write a function named getHousesWithSize that uses Object.entries to return a ne
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseSizes = houses => {
-    // Solution code here...
+    return Object.entries(houses).map(([key, value]) => 
+    {
+        return {
+            house: key,
+            members: value.characters.length,
+        };
+    }
+    );
+    
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -49,13 +68,16 @@ CHALLENGE 5
 Write a function named getHouseHead that uses a dynamic object 
 property (obj[property]) to get the head of the specified house.
 
-This function should take in the house data and a house name and return a the name of the house head.
+This function should take in the house data and a house name and return the name of the house head.
 
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseHead = (houses, houseToFind) => {
-    // Solution code here...
 
+    let entries = Object.entries(houses).find(([key]) => houseToFind === key);
+
+    return entries[1].head;
+    
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,7 +87,11 @@ Write a function named totalCharacters that takes in the house data and returns 
 ------------------------------------------------------------------------------------------------ */
 
 export const totalCharacters = houses => {
-    // Solution code here...
+    let totalCharacters = 0;
+
+    Object.entries(houses).map(([key, value]) => totalCharacters += value.characters.length);
+
+    return totalCharacters;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,7 +101,7 @@ Write a function named getHouseWordsMapped that does the same things as getHouse
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseWordsMapped = houses => {
-    // Solution code here...
+    return Object.entries(houses).map(([key, value]) => value.words);
 };
 
 /* ------------------------------------------------------------------------------------------------
